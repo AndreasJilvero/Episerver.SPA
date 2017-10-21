@@ -21302,7 +21302,11 @@ var StringComponent = function (_Component) {
       return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement("input", { type: "text", defaultValue: value, "data-epi-property-name": propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" })
+        window.epi ? _react2.default.createElement("input", { type: "text", defaultValue: value, "data-epi-property-name": propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" }) : _react2.default.createElement(
+          "span",
+          null,
+          value
+        )
       );
     }
   }]);

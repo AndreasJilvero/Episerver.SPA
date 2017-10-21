@@ -16,7 +16,11 @@ class StringComponent extends Component {
 
     return (
       <div>
-        <input type="text" defaultValue={value} data-epi-property-name={propertyName} data-epi-property-edittype="floating" data-epi-property-render="none" />
+        {window.epi ?
+          <input type="text" defaultValue={value} data-epi-property-name={propertyName} data-epi-property-edittype="floating" data-epi-property-render="none" />
+          :
+          <span>{value}</span>
+        }
       </div>
     );
   }
