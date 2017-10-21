@@ -4,6 +4,7 @@ using EPiServer.Core;
 
 namespace StarRepublic.Episerver.SPA.Controllers
 {
+    [RoutePrefix("api/content")]
     public class ContentApiController : ApiController
     {
         private readonly IContentLoader _contentLoader;
@@ -13,6 +14,8 @@ namespace StarRepublic.Episerver.SPA.Controllers
             _contentLoader = contentLoader;
         }
 
+        [HttpGet]
+        [Route]
         public IHttpActionResult Get(string contentId)
         {
             var contentLink = ContentReference.Parse(contentId);

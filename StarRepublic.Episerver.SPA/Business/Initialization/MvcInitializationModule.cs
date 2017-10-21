@@ -7,7 +7,7 @@ using StarRepublic.Episerver.SPA.Business.IoC;
 namespace StarRepublic.Episerver.SPA.Business.Initialization
 {
     [ModuleDependency(typeof(FrameworkInitialization))]
-    public class StructureMapInitializationModule : IConfigurableModule
+    public class MvcInitializationModule : IConfigurableModule
     {
         public void Initialize(InitializationEngine context)
         {
