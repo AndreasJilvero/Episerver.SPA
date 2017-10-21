@@ -208,6 +208,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Business\Initialization\MvcInitializationModule.cs" />
+    <Compile Include="Business\Initialization\SetupBetaUserInitializationModule.cs" />
     <Compile Include="Business\Initialization\WebApiInitializationModule.cs" />
     <Compile Include="Business\IoC\StructureMapDependencyResolver.cs" />
     <Compile Include="Business\IoC\StructureMapDependencyScope.cs" />
@@ -229,6 +230,7 @@
   <ItemGroup>
     <Content Include="Static\js\App.js" />
     <Content Include="Static\js\index.js" />
+    <Content Include="Static\js\stringComponent.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />

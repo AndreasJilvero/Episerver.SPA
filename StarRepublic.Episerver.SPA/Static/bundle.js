@@ -21286,28 +21286,34 @@ var StringComponent = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (StringComponent.__proto__ || Object.getPrototypeOf(StringComponent)).call(this, props));
 
-    console.log(props);
-    console.log(window.epi);
+    _this.state = {
+      propertyName: _this.props.propertyName,
+      value: _this.props.value
+    };
     return _this;
   }
 
   _createClass(StringComponent, [{
     key: "render",
     value: function render() {
-      var _props = this.props,
-          propertyName = _props.propertyName,
-          value = _props.value;
-
-
       return _react2.default.createElement(
         "div",
-        null,
-        _react2.default.createElement(
-          "span",
-          { "data-epi-property-name": propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" },
-          value
-        )
+        { "data-epi-property-name": this.state.propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" },
+        this.state.value
       );
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (window.epi) {
+        var epi = window.epi;
+        epi.subscribe("beta/contentSaved", function (propertyDetails) {
+          // Check if it was "our" property that changed
+          if (this.props.propertyName.toUpperCase() === propertyDetails.properties[0].name.toUpperCase()) {
+            this.setState({ value: propertyDetails.properties[0].value }); // Update this component's state to reflect the new property value in the UI
+          }
+        }.bind(this));
+      }
     }
   }]);
 
