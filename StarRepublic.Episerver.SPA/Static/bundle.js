@@ -21302,9 +21302,9 @@ var StringComponent = function (_Component) {
       return _react2.default.createElement(
         "div",
         null,
-        window.epi ? _react2.default.createElement("input", { type: "text", defaultValue: value, "data-epi-property-name": propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" }) : _react2.default.createElement(
+        _react2.default.createElement(
           "span",
-          null,
+          { "data-epi-property-name": propertyName, "data-epi-property-edittype": "floating", "data-epi-property-render": "none" },
           value
         )
       );
