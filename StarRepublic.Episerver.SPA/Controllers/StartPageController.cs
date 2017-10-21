@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using EPiServer;
 using EPiServer.Web.Mvc;
 using StarRepublic.Episerver.SPA.Models.Pages;
 

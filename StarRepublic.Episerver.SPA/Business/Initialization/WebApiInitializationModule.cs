@@ -3,6 +3,7 @@ using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using StarRepublic.Episerver.SPA.Business.IoC;
 
 namespace StarRepublic.Episerver.SPA.Business.Initialization
@@ -26,8 +27,12 @@ namespace StarRepublic.Episerver.SPA.Business.Initialization
 
                 x.DependencyResolver = new StructureMapDependencyResolver(context.StructureMap());
 
-                x.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                x.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new Json.ContractResolver();
+                var xmlFormatter = x.Formatters.XmlFormatter;
+                x.Formatters.Remove(xmlFormatter);
+
+                var serializerSettings = x.Formatters.JsonFormatter.SerializerSettings;
+                serializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                serializerSettings.ContractResolver = new Json.ContractResolver();
             });
         }
     }

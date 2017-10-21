@@ -7,7 +7,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace StarRepublic.Episerver.SPA.Business.Json
 {
-    public class ContractResolver : DefaultContractResolver
+    public class ContractResolver : CamelCasePropertyNamesContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {

@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 
-class StringComponent extends Component {
+class StartPageComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -31,4 +31,4 @@ class StringComponent extends Component {
   }
 }
 
-export default StringComponent;
+export default StartPageComponent;
