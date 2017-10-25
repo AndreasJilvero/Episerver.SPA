@@ -229,6 +229,7 @@
   <ItemGroup>
     <Content Include="Static\js\App.js" />
     <Content Include="Static\js\index.js" />
+    <Content Include="Static\js\contentPageComponent.js" />
     <Content Include="Static\js\startPageComponent.js" />
     <Content Include="Static\js\stringComponent.js" />
     <Content Include="Views\Web.config" />
@@ -248,7 +249,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\ContentPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

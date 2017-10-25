@@ -33,7 +33,7 @@ namespace StarRepublic.Episerver.SPA.Controllers
         private ContentTreeLinkItem CreateContentTreeLinkItem(PageData page)
         {
             var url = _urlResolver.GetUrl(page.ContentLink);
-            return new ContentTreeLinkItem(page.Name, url);
+            return new ContentTreeLinkItem(page, url);
         }
     }
 }

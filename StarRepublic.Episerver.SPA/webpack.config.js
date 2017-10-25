@@ -13,7 +13,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         query: {
-          presets: ['react', 'env'] 
+          presets: ['react', 'env', 'es2015'],
+          plugins: ['transform-class-properties']
         }
       }
     ]

@@ -1,13 +1,19 @@
-﻿namespace StarRepublic.Episerver.SPA.Models.WebApi
+﻿using EPiServer.Core;
+
+namespace StarRepublic.Episerver.SPA.Models.WebApi
 {
     public class ContentTreeLinkItem
     {
-        public ContentTreeLinkItem(string name, string url)
+        public ContentTreeLinkItem(PageData pageData, string url)
         {
-            Name = name;
+            Name = pageData.Name;
+            ContentReference = pageData.ContentLink;
+            Type = pageData.PageTypeName;
             Url = url;
         }
 
+        public ContentReference ContentReference { get; set; }
+        public string Type { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
     }
