@@ -14,7 +14,7 @@ They presented the exact same stuff that John blogged about some time ago:
 ### CMS as a service - headless
 Episerver has basically developed a web API to get content. It relies on Episerver Find to provide free text search functionality. Since almost everything is content in Episerver, it should provide you with relevant data.
 
-## Architechture
+## Architecture
 With these two features in mind, I was eager to try to combine them. That would allow me to create a single page application.
 
 It shouldn't be difficult at all to create a simpler version of Episervers web API. I created two endpoints in my web API:
@@ -22,9 +22,9 @@ It shouldn't be difficult at all to create a simpler version of Episervers web A
 * `GET /contenttree`
 * `GET /content?contentId={contentReference}`
 
-The first one returns the entire content tree, based on the root node. The other one returns a model containing properties explicitely declared on a page type. You need to provide a content reference in order to get something returned. It won't provide you with free text search, therefore Episerver Find is not required. It just uses the content loader to get the data.
+The first one returns the entire content tree, based on the root node. The other one returns a model containing properties declared on a page type. You need to provide a content reference in order to get something returned. It won't provide you with free text search, therefore Episerver Find is not required. It just uses the content loader to get the data.
 
-Voilá, headless CMS recreated!
+Voilá, headless CMS on it's way!
 
 In order to create a SPA, I'm using React to render my views. I'm using React Router to dynamically create routes and pages, based on the result of `/contenttree`. There is no specific reason for choosing React, other than it being a popular framework. Vue seems cool as well.
 
