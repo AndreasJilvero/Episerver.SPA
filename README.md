@@ -47,3 +47,17 @@ Episerver has made it easier for you to use a modern JS framework to render view
 ## Contribute
 
 You may use this repository as you want. You are welcome to contribute by forking it or creating pull requests.
+
+## Install
+
+1. `git clone https://github.com/AndreasJilvero/Episerver.SPA.git`
+2. Restore database (unpack App_Data\CMS.zip)
+3. Set connection string
+4. Run `npm install`
+5. Run `webpack`
+6. Run application
+
+To login, enter http://localhost:51383/episerver with credentials:
+
+* Username: admin
+* password: store
