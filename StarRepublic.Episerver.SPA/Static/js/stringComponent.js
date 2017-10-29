@@ -14,16 +14,18 @@ class StringComponent extends Component {
   }
 
   componentDidMount() {
-    if (window.epi && window.epi.subscribe) {
-      var epi = window.epi;
-
-      epi.subscribe("beta/contentSaved", (propertyDetails) => {
-         // Check if it was "our" property that changed
-        if (this.props.propertyName.toUpperCase() === propertyDetails.properties[0].name.toUpperCase()) {
-          this.props.changeValue(propertyDetails.properties[0].value);
-        }
-      });
-    }
+    setTimeout(function() {
+      if (window.epi && window.epi.subscribe) {
+        var epi = window.epi;
+  
+        epi.subscribe("beta/contentSaved", (propertyDetails) => {
+           // Check if it was "our" property that changed
+          if (this.props.propertyName.toUpperCase() === propertyDetails.properties[0].name.toUpperCase()) {
+            this.props.changeValue(propertyDetails.properties[0].value);
+          }
+        });
+      }
+    }.bind(this), 1);
   }
 }
 

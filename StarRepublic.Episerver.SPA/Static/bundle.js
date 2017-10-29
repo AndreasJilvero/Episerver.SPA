@@ -2766,18 +2766,20 @@ var StringComponent = function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
+      setTimeout(function () {
+        var _this2 = this;
 
-      if (window.epi && window.epi.subscribe) {
-        var epi = window.epi;
+        if (window.epi && window.epi.subscribe) {
+          var epi = window.epi;
 
-        epi.subscribe("beta/contentSaved", function (propertyDetails) {
-          // Check if it was "our" property that changed
-          if (_this2.props.propertyName.toUpperCase() === propertyDetails.properties[0].name.toUpperCase()) {
-            _this2.props.changeValue(propertyDetails.properties[0].value);
-          }
-        });
-      }
+          epi.subscribe("beta/contentSaved", function (propertyDetails) {
+            // Check if it was "our" property that changed
+            if (_this2.props.propertyName.toUpperCase() === propertyDetails.properties[0].name.toUpperCase()) {
+              _this2.props.changeValue(propertyDetails.properties[0].value);
+            }
+          });
+        }
+      }.bind(this), 1);
     }
   }]);
 
