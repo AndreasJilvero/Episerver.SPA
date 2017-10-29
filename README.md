@@ -26,7 +26,7 @@ The first one returns the entire content tree, based on the root node. The other
 
 Voilá, headless CMS on it's way!
 
-In order to create a SPA, I'm using React to render my views. I'm using React Router to dynamically create routes and pages, based on the result of `/contenttree`. There is no specific reason for choosing React, other than it being a popular framework. Vue seems cool as well.
+In order to create a SPA, I'm using React to render my views. I'm using React Router to dynamically create routes and pages, based on the result of `/contenttree`. When I switch route in my SPA, a web API call is made to `/content=contentId={...}` to get that page's content. There is no specific reason for choosing React, other than it being a popular framework.
 
 In Episerver I have created two really simple page types - start page and content page. They both contain a string property. For these, I have created three React components - start page component, content page component and string component. The page components are kind of partial views/templates for my page types, and the string component provides me with common markup, i.e. the data-epi-property-* attributes.
 
